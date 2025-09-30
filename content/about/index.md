@@ -6,4 +6,7 @@ eleventyNavigation:
 ---
 # About Me
 
-I am a person that writes stuff.
+Fully Accessible Taxi
+
+NTA licenced
+
