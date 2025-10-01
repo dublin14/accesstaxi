@@ -1,28 +1,76 @@
 ---
-layout: layouts/home.njk
-eleventyNavigation:
-  key: Home
-  order: 1
-numberOfLatestPostsToShow: 3
+layout: layouts/base.njk
+title: Home
 ---
-{% set postsCount = collections.posts | length %}
-{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
+<section class="hero">
+    <div class="container">
+        <h2>Accessible Transportation When You Need It</h2>
+        <p>Reliable wheelchair accessible taxi service with trained drivers and comfortable vehicles. Serving our community with dignity and care.</p>
+        <div class="hero-actions">
+            <a href="/booking/" class="button button-primary">Book a Ride</a>
+            <a href="tel:{{ metadata.phone }}" class="button button-secondary">Call Now</a>
+        </div>
+    </div>
+</section>
 
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
-{% endif %}
+<section class="container">
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon" aria-hidden="true">♿</div>
+            <h3>Wheelchair Accessible</h3>
+            <p>Fully equipped vans with ramps and securement systems for safe, comfortable travel.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon" aria-hidden="true">🕒</div>
+            <h3>24/7 Service</h3>
+            <p>Available around the clock for your transportation needs, including emergencies.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon" aria-hidden="true">👨‍⚕️</div>
+            <h3>Trained Drivers</h3>
+            <p>Professional drivers trained in accessibility, safety, and customer service.</p>
+        </div>
+    </div>
+</section>
 
-{# List every content page in the project #}
-{#
-<ul>
-	{%- for entry in collections.all %}
-	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
-	{%- endfor %}
-</ul>
-#}
+<section class="features">
+    <div class="container">
+        <h2 class="text-center">Why Choose City Access Taxi?</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="feature-icon" aria-hidden="true">🚐</div>
+                <h3>Modern Fleet</h3>
+                <p>Clean, well-maintained vehicles equipped for all accessibility needs.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon" aria-hidden="true">💵</div>
+                <h3>Affordable Rates</h3>
+                <p>Competitive pricing with no hidden fees. Ask about our package deals.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon" aria-hidden="true">⭐</div>
+                <h3>5-Star Service</h3>
+                <p>Rated excellent by our customers for reliability and care.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon" aria-hidden="true">🔒</div>
+                <h3>Fully Insured</h3>
+                <p>Comprehensive insurance coverage for your peace of mind.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Ride?</h2>
+            <p>Book your accessible transportation today. We're here to serve you 24/7.</p>
+            <div class="hero-actions">
+                <a href="/booking/" class="button button-primary">Book Now</a>
+                <a href="/contact/" class="button button-secondary">Get in Touch</a>
+            </div>
+        </div>
+    </div>
+</section>

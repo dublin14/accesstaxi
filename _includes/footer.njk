@@ -1,0 +1,46 @@
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>{{ metadata.title }}</h3>
+                <p>{{ metadata.tagline }}</p>
+                <p class="footer-contact">
+                    <a href="tel:{{ metadata.phone }}">{{ metadata.phone }}</a><br>
+                    <a href="mailto:{{ metadata.email }}">{{ metadata.email }}</a><br>
+                    {{ metadata.address }}
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="/services/">Our Services</a></li>
+                    <li><a href="/fleet/">Our Fleet</a></li>
+                    <li><a href="/booking/">Book a Ride</a></li>
+                    <li><a href="/contact/">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    {% for service in metadata.services %}
+                    <li>{{ service }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>24/7 Service<br>365 Days a Year</p>
+                <div class="footer-cta">
+                    <a href="/booking/" class="button button-secondary">Book Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ "now" | date: "%Y" }} {{ metadata.title }}. All rights reserved.</p>
+        </div>
+    </div>
+</footer>

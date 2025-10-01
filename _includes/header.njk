@@ -1,0 +1,36 @@
+<header role="banner" class="site-header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="/" aria-label="{{ metadata.title }} - Home">
+                    <h1>{{ metadata.title }}</h1>
+                    <span class="tagline">{{ metadata.tagline }}</span>
+                </a>
+            </div>
+            
+            <nav class="nav-main" aria-label="Main navigation">
+                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+                    <span class="hamburger"></span>
+                    <span class="sr-only">Menu</span>
+                </button>
+                
+                <ul id="nav-menu" class="nav-menu">
+                    <li><a href="/" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a></li>
+                    <li><a href="/services/" {% if page.url == "/services/" %}aria-current="page"{% endif %}>Services</a></li>
+                    <li><a href="/fleet/" {% if page.url == "/fleet/" %}aria-current="page"{% endif %}>Our Fleet</a></li>
+                    <li><a href="/booking/" {% if page.url == "/booking/" %}aria-current="page"{% endif %}>Book a Ride</a></li>
+                    <li><a href="/contact/" {% if page.url == "/contact/" %}aria-current="page"{% endif %}>Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-cta">
+                <a href="tel:{{ metadata.phone }}" class="phone-link">
+                    <span aria-hidden="true">📞</span>
+                    <span class="sr-only">Call us at </span>
+                    {{ metadata.phone }}
+                </a>
+                <a href="/booking/" class="button button-primary">Book Now</a>
+            </div>
+        </div>
+    </div>
+</header>
