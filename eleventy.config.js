@@ -37,6 +37,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(pluginBundle);
 
+	eleventyConfig.ignores.add("content/feed/**");
+
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
@@ -137,3 +139,4 @@ module.exports = function(eleventyConfig) {
 		pathPrefix: "/",
 	};
 };
+
